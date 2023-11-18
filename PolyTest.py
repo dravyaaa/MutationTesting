@@ -1,5 +1,5 @@
 import pytest
-from Polynomial import CustomPolynomial  # Import the Polynomial class from your module
+from Polynomial import Polynomial  # Import the Polynomial class from your module
 
 def test_init():
     poly = Polynomial([3, 0, 2])
