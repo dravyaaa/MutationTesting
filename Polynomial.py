@@ -1,4 +1,4 @@
-class CustomPolynomial:
+class Polynomial:
     def __init__(self, coefficients):
         """
         Initialize a polynomial with a list of coefficients. The coefficients list should be in descending order of
@@ -37,7 +37,7 @@ class CustomPolynomial:
             0] * (max_length - len(other.coefficients)) + other.coefficients
         result_coefficients = [a + b for a,
                                b in zip(padded_self, padded_other)]
-        return CustomPolynomial(result_coefficients)
+        return Polynomial(result_coefficients)
 
     def __sub__(self, other):
         """
@@ -50,7 +50,7 @@ class CustomPolynomial:
             0] * (max_length - len(other.coefficients)) + other.coefficients
         result_coefficients = [a - b for a,
                                b in zip(padded_self, padded_other)]
-        return CustomPolynomial(result_coefficients)
+        return Polynomial(result_coefficients)
 
     def __mul__(self, other):
         """
@@ -62,7 +62,7 @@ class CustomPolynomial:
             for j in range(len(other.coefficients)):
                 result_coefficients[i + j] += self.coefficients[i] * \
                     other.coefficients[j]
-        return CustomPolynomial(result_coefficients)
+        return Polynomial(result_coefficients)
 
     def evaluate(self, x):
         """
